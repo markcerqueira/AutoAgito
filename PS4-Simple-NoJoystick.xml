@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <controller id="1" dpi="8200" type="DS4">
+    <configuration id="1">
+      <trigger type="keyboard" id="0" name="" button_id="LALT" switch_back="no" delay="0"/>
+      <mouse_options_list>
+        <mouse name="" id="0" mode="Aiming" buffer_size="1" filter="0.00"/>
+      </mouse_options_list>
+      <intensity_list/>
+      <button_map>
+        <button id="abs_axis_10" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="h"/>
+        </button>
+        <button id="abs_axis_9" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="n"/>
+        </button>
+        <button id="abs_axis_8" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="j"/>
+        </button>
+        <button id="abs_axis_7" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="u"/>
+        </button>
+        <button id="abs_axis_6" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="a"/>
+        </button>
+        <button id="abs_axis_5" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="z"/>
+        </button>
+        <button id="abs_axis_4" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="s"/>
+        </button>
+        <button id="abs_axis_3" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="w"/>
+        </button>
+        <button id="abs_axis_2" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="x"/>
+        </button>
+      </button_map>
+      <axis_map/>
+    </configuration>
+    <configuration id="2">
+      <trigger type="mouse" id="0" name="" button_id="BUTTON_RIGHT" switch_back="yes" delay="0"/>
+      <mouse_options_list>
+        <mouse name="" id="0" mode="Aiming" buffer_size="1" filter="0.00"/>
+      </mouse_options_list>
+      <intensity_list/>
+      <button_map>
+        <button id="abs_axis_10" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="h"/>
+        </button>
+        <button id="abs_axis_9" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="n"/>
+        </button>
+        <button id="abs_axis_8" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="j"/>
+        </button>
+        <button id="abs_axis_7" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="u"/>
+        </button>
+        <button id="abs_axis_6" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="a"/>
+        </button>
+        <button id="abs_axis_5" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="z"/>
+        </button>
+        <button id="abs_axis_4" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="s"/>
+        </button>
+        <button id="abs_axis_3" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="w"/>
+        </button>
+        <button id="abs_axis_2" label="">
+          <device type="keyboard" id="0" name=""/>
+          <event type="button" id="x"/>
+        </button>
+      </button_map>
+      <axis_map/>
+    </configuration>
+    <configuration id="3">
+      <trigger type="keyboard" id="0" name="" button_id="f" switch_back="yes" delay="0"/>
+      <mouse_options_list>
+        <mouse name="" id="0" mode="Aiming" buffer_size="1" filter="0.00"/>
+      </mouse_options_list>
+      <intensity_list/>
+      <button_map/>
+      <axis_map>
+        <axis id="rel_axis_4" label="">
+          <device type="mouse" id="0" name=""/>
+          <event type="axis" id="x" dead_zone="0" multiplier="1.00" exponent="0.50" shape=""/>
+        </axis>
+        <axis id="rel_axis_5" label="">
+          <device type="mouse" id="0" name=""/>
+          <event type="axis" id="y" dead_zone="0" multiplier="1.00" exponent="0.50" shape=""/>
+        </axis>
+      </axis_map>
+    </configuration>
+  </controller>
+</root>

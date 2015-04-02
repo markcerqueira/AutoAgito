@@ -7,145 +7,110 @@ import java.awt.event.KeyEvent;
  * Created by Mark on 4/1/2015.
  */
 public class AutoAgito {
-    private static Robot robot;
+    private static final int LOOPS_TO_RUN = 30;
 
-    private static final int MS_DELAY_BETWEEN_PRESS_AND_RELEASE = 200;
-    private static final int MS_SLEEP_AFTER_KEY_EVENT_DONE = 400;
+    private PS4Robot mPS4Robot;
 
-    private static void pressKey(int keyEvent) {
-        System.out.println("Pressing key = " + keyEvent);
+    // we can optimize getting to the settings a bit afer the first time we go there
+    private boolean mHasScrolledToSettings = false;
 
-        robot.keyPress(keyEvent);
-        robot.delay(MS_DELAY_BETWEEN_PRESS_AND_RELEASE);
-        robot.keyRelease(keyEvent);
+    public void run() {
+        mPS4Robot = new PS4Robot();
 
-        robot.delay(MS_SLEEP_AFTER_KEY_EVENT_DONE);
-    }
+        // give enough time to launch gimx-launcher
+        System.out.println("Waiting 10 seconds so start gimx-launcher now!");
+        mPS4Robot.delay(10000);
+        System.out.println("Done waiting... starting to do work!");
 
-    private static void pressX() {
-        pressKey(KeyEvent.VK_N);
-    }
-
-    private static void pressCircle() {
-        pressKey(KeyEvent.VK_J);
-    }
-
-    private static void pressUp() {
-        pressKey(KeyEvent.VK_W);
-    }
-
-    private static void pressDown() {
-        pressKey(KeyEvent.VK_Z);
-    }
-
-    private static void pressLeft() {
-        pressKey(KeyEvent.VK_A);
-    }
-
-    private static void pressRight() {
-        pressKey(KeyEvent.VK_S);
-    }
-
-    private static void pressPSButton() {
-        pressKey(KeyEvent.VK_X);
-    }
-
-    public static void run() {
-        try {
-            robot = new Robot();
-            System.out.println("Waiting 7 seconds so start Gimx-launcher now!");
-            robot.delay(7000);
-            System.out.println("Done waiting. Starting to do work!");
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < LOOPS_TO_RUN; i++) {
             levelUp();
         }
     }
 
-    private static boolean sHasScrolledToSettings = false;
-
-    private static void levelUp() {
+    private void levelUp() {
         // talk to the trainer and accept secret training
-        pressX();
+        mPS4Robot.pressX();
 
-        robot.delay(2000);
+        mPS4Robot.delay(2000);
 
-        pressX();
+        mPS4Robot.pressX();
 
-        robot.delay(2000);
+        mPS4Robot.delay(2000);
 
-        pressUp();
-        pressX();
+        mPS4Robot.pressUp();
+        mPS4Robot.pressX();
 
-        robot.delay(5000);
+        mPS4Robot.delay(5000);
 
         // save your game
-        pressX();
-        pressUp();
-        pressX();
+        mPS4Robot.pressX();
+        mPS4Robot.pressUp();
+        mPS4Robot.pressX();
 
-        robot.delay(5000);
+        mPS4Robot.delay(5000);
 
         // game is now saved
-        pressX();
+        mPS4Robot.pressX();
 
-        robot.delay(5000);
+        mPS4Robot.delay(5000);
 
-        pressPSButton();
+        mPS4Robot.pressPSButton();
 
-        robot.delay(2000);
+        mPS4Robot.delay(2000);
 
-        pressUp();
+        mPS4Robot.pressUp();
 
-        if(!sHasScrolledToSettings) {
+        // we only need to scroll all the way to the right once
+        // afterwards after pushing up, we'll be at the settings icon already
+        if(!mHasScrolledToSettings) {
             for (int i = 0; i < 7; i++) {
-                pressRight();
+                mPS4Robot.pressRight();
             }
-            pressLeft();
+            mPS4Robot.pressLeft();
 
-            sHasScrolledToSettings = true;
+            mHasScrolledToSettings = true;
         }
 
-        pressX();
+        mPS4Robot.pressX();
 
-        robot.delay(2000);
+        mPS4Robot.delay(2000);
 
+        // move down to Date and Time settings
         for(int i = 0; i < 14; i++) {
-            pressDown();
+            mPS4Robot.pressDown();
         }
 
-        pressX();
-        pressX();
-        pressX();
+        mPS4Robot.pressX();
+        mPS4Robot.pressX();
+        mPS4Robot.pressX();
 
         // move to the year
-        pressRight();
-        pressRight();
+        mPS4Robot.pressRight();
+        mPS4Robot.pressRight();
 
         // move year up by one
-        pressUp();
+        mPS4Robot.pressUp();
 
-        pressX();
+        // confirm change
+        mPS4Robot.pressX();
 
-        pressPSButton();
+        // pressing PS Button takes us back to the main app (i.e. FF Type-0)
+        mPS4Robot.pressPSButton();
 
-        robot.delay(1000);
+        mPS4Robot.delay(1000);
 
-        pressX();
-        pressX();
+        mPS4Robot.pressX();
+        mPS4Robot.pressX();
 
-        robot.delay(3000);
+        mPS4Robot.delay(3000);
 
-        pressX();
+        mPS4Robot.pressX();
 
-        robot.delay(5000);
+        mPS4Robot.delay(5000);
 
+        // confirm all the XP we just received!
         for(int i = 0; i < 13; i++) {
-            pressX();
+            mPS4Robot.pressX();
         }
     }
 }

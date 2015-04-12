@@ -7,6 +7,11 @@ import java.awt.event.KeyEvent;
  * Created by Mark on 4/1/2015.
  */
 public class AutoAgito {
+    // seconds from when program is started to when commands are inputted by robot
+    // you'll want to leave enough time to launch GIMX
+    private static final int LAUNCH_WINDOW_FOR_GIMX = 10;
+
+    // how many times we will do secret training
     private static final int LOOPS_TO_RUN = 30;
 
     private PS4Robot mPS4Robot;
@@ -17,9 +22,15 @@ public class AutoAgito {
     public void run() {
         mPS4Robot = new PS4Robot();
 
-        // give enough time to launch gimx-launcher
-        System.out.println("Waiting 10 seconds so start gimx-launcher now!");
-        mPS4Robot.delay(10000);
+        // make sure robot is okay before we continue
+        if(!mPS4Robot.isRobotOkay()) {
+            System.out.println("Something went wrong creating PS4Robot; aborting!");
+            System.exit(-1);
+        }
+
+        // give 10 seconds to launch gimx-launcher
+        System.out.println("Waiting " + LAUNCH_WINDOW_FOR_GIMX + " seconds so start gimx-launcher now!");
+        mPS4Robot.delay(LAUNCH_WINDOW_FOR_GIMX * 1000 /* convert to milliseconds */);
         System.out.println("Done waiting... starting to do work!");
 
         for(int i = 0; i < LOOPS_TO_RUN; i++) {

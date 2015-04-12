@@ -4,7 +4,7 @@ Automates Secret Training "exploit" in Final Fantasy Type-0
 Here's a [video](https://www.youtube.com/watch?v=4Yy3DOvEc1U) of Auto Agito in action on Youtube!
 
 # Hardware
-* Windwows computer (I used a Macbook Pro running Windows 7 in VMWare Fusion)
+* Windows computer (I used a Macbook Pro running Windows 7 in VMWare Fusion)
 * [Titan One](http://www.extreme-mods.com/Titan-One-for-Playstation-4-PS4-Xbox-One-Xbox-360-Playstation-3-PS3_p_5513.html)
 * DualShock 4 and micro USB cable (needed to keep our Titan One authenticated with the PS4)
 * Mini USB cable to hook up computer to Titan One

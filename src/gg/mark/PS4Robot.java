@@ -21,40 +21,50 @@ public class PS4Robot {
         }
         catch(Exception e) {
             System.out.println(e);
+            mRobot = null;
         }
     }
 
+    public boolean isRobotOkay() {
+        return mRobot != null;
+    }
+
     public void pressX() {
+        System.out.println("Pressing X");
         pressKey(KeyEvent.VK_N);
     }
 
     public void pressCircle() {
+        System.out.println("Pressing ◯");
         pressKey(KeyEvent.VK_J);
     }
 
     public void pressUp() {
+        System.out.println("Pressing ↑");
         pressKey(KeyEvent.VK_W);
     }
 
     public void pressDown() {
+        System.out.println("Pressing ↓");
         pressKey(KeyEvent.VK_Z);
     }
 
     public void pressLeft() {
+        System.out.println("Pressing ←");
         pressKey(KeyEvent.VK_A);
     }
 
     public void pressRight() {
+        System.out.println("Pressing →");
         pressKey(KeyEvent.VK_S);
     }
 
     public void pressPSButton() {
+        System.out.println("Pressing PS");
         pressKey(KeyEvent.VK_X);
     }
 
     private void pressKey(int keyEvent) {
-        System.out.println("Pressing key = " + keyEvent);
-
         mRobot.keyPress(keyEvent);
         mRobot.delay(MS_DELAY_BETWEEN_PRESS_AND_RELEASE);
         mRobot.keyRelease(keyEvent);

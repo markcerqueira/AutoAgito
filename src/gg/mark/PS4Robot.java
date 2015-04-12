@@ -35,27 +35,27 @@ public class PS4Robot {
     }
 
     public void pressCircle() {
-        System.out.println("Pressing ◯");
+        System.out.println("Pressing O");
         pressKey(KeyEvent.VK_J);
     }
 
     public void pressUp() {
-        System.out.println("Pressing ↑");
+        System.out.println("Pressing UP");
         pressKey(KeyEvent.VK_W);
     }
 
     public void pressDown() {
-        System.out.println("Pressing ↓");
+        System.out.println("Pressing DOWN");
         pressKey(KeyEvent.VK_Z);
     }
 
     public void pressLeft() {
-        System.out.println("Pressing ←");
+        System.out.println("Pressing LEFT");
         pressKey(KeyEvent.VK_A);
     }
 
     public void pressRight() {
-        System.out.println("Pressing →");
+        System.out.println("Pressing RIGHT");
         pressKey(KeyEvent.VK_S);
     }
 

@@ -1,7 +1,7 @@
 # Auto Agito
 Automates Secret Training "exploit" in Final Fantasy Type-0
 
-Here's a [video](https://www.youtube.com/watch?v=4Yy3DOvEc1U) of Auto Agito in action on Youtube!
+Here's a [video](http://youtu.be/HDU4rSxBPw8) of Auto Agito in action on Youtube!
 
 # Hardware
 * Windows computer (I used a Macbook Pro running Windows 7 in VMWare Fusion)
@@ -23,7 +23,7 @@ Here's a [video](https://www.youtube.com/watch?v=4Yy3DOvEc1U) of Auto Agito in a
 * Copy the PS4-Simple-NoJoystick.xml file into C:\Users\USER_NAME\AppData\Roaming\gimx\config
 * Launch gimx-launcher and set Output to GPP/Cronus, Input to Windows events, Config to PS4-Simple-NoJoystick.xml
 * You can leave grab checkbox under Mouse unchecked and you can check terminal under Output to see button presses
-* Hit Start and test that you can move around (w, a, s, z) and click x and circle (n and j)
+* Hit Start and test that you can move around (w, a, s, z) and click x and circle (n and j) - this step is the most error prone because gimx-launcher (or something in this hardware/software chain) is unreliable. Sometimes restarting gimx-launcher and selecting gui instead of terminal makes things work. Anyhow, good luck!
 * Press Shift+ESC to quit key capture
 * Launch FF Type-0 and stand in front of the Secret Training Guy (STG) in the Arena
 * Press Run button in your IDE
